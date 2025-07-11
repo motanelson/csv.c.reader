@@ -1,7 +1,7 @@
 
 import sys
 import sdl2
-#import sdl2.ext
+import sdl2.ext
 
 def main():
     sdl2.ext.init()
