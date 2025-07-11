@@ -1,2 +1,1 @@
-# sdl.py.example
-sdl example python
+shell c
