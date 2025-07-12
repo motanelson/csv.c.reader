@@ -3,6 +3,9 @@
 
 int main(int argc, char *argv[]){
     char c[4096]="\0";
+    char *cc=NULL;
+    char *ccc=NULL;
+    char *cccc=NULL;
     int i=0;
     printf("\033c\033[43;30m\n\n");
     if (argc<2)return 1;
@@ -15,11 +18,19 @@ int main(int argc, char *argv[]){
         
         if(fgets(c,4095,f1)!=NULL){
             i=0;
+            cc=c;
+            ccc=c;
+            cccc=c;
             while(c[i]!='\0'){
-                if(c[i]==',')c[i]=' ';
+                if(c[i]==','){
+                   ccc=c+i+1;
+                   c[i]='\0';
+                   printf ("%s\n",cc); 
+                   cc=ccc;
+                 }
                 i++;
             }
-            system(c);
+            printf ("%s\n",cc);
         }
         
     }
