@@ -6,7 +6,10 @@ int main(int argc, char *argv[]){
     char *cc=NULL;
     char *ccc=NULL;
     char *cccc=NULL;
+    char *a[4096];
     int i=0;
+    int n=0;
+    int nn=0;
     printf("\033c\033[43;30m\n\n");
     if (argc<2)return 1;
     printf("%s\n--------------------------------\n",argv[1]);
@@ -21,16 +24,21 @@ int main(int argc, char *argv[]){
             cc=c;
             ccc=c;
             cccc=c;
+            n=0;
             while(c[i]!='\0'){
                 if(c[i]==','){
                    ccc=c+i+1;
                    c[i]='\0';
-                   printf ("%s\n",cc); 
+                   a[n]=cc;
                    cc=ccc;
+                   n++;
                  }
                 i++;
+                
             }
-            printf ("%s\n",cc);
+            a[n]=cc;
+            n++;
+            for(nn=0;nn<n;nn++)printf ("%s\n",a[nn]);
         }
         
     }
