@@ -1,0 +1,6 @@
+print("\033c\033[43;30m\nthe name of the new file?")
+a=input()
+print(a)
+f1=open(a,"w")
+f1.write("")
+f1.close()
